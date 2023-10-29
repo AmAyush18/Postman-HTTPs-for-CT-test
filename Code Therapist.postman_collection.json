@@ -1,0 +1,982 @@
+{
+	"info": {
+		"_postman_id": "1d595c19-fe2b-4ec6-a419-0b327a700639",
+		"name": "Code Therapist",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24629455"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ayush Dwivedi\",\r\n    \"email\":\"dwivediayush2301@gmail.com\",\r\n    \"password\":\"testing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/registration",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activate User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"activation_code\":\"6240\",\r\n    \"activation_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWUiOiJBeXVzaCBEd2l2ZWRpIiwiZW1haWwiOiJkd2l2ZWRpYXl1c2gyMzAxQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoidGVzdGluZyJ9LCJhY3RpdmF0aW9uQ29kZSI6IjYyNDAiLCJpYXQiOjE2OTgyMzIzMzIsImV4cCI6MTY5ODIzMjYzMn0.8Wv3SpUs1soQh9zVTYd1w0iMpgQt6QP7ndb4Tle0x6Q\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/activate-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"activate-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"dwivediayush2301@gmail.com\",\r\n    \"password\":\"testing\"\r\n    // \"email\":\"codetherapist18@gmail.com\",\r\n    // \"password\":\"testing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update access_token",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserInfo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Social Auth",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@mail.com\",\r\n    \"name\": \"test name\",\r\n    \"avatar\": \"abcd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/social-auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"social-auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Update User Info",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/update-user-info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"update-user-info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\":\"testing\",\r\n    \"newPassword\":\"passwordUpdated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/update-user-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"update-user-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Avatar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"avatar\":\"https://th.bing.com/th/id/OIG.lVXjWwlHyIo4QdjnC1YE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/update-user-avatar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"update-user-avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All users--only admin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/get-users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"get-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user role --only admin",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"653b5ec797c157145bc17b6a\",\r\n    \"role\": \"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/update-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"update-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User --only admin",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/delete-user/653951828d17a863196df83d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"delete-user",
+								"653951828d17a863196df83d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "Create Course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Course 2\",\r\n    \"description\": \"Description for Course 2\",\r\n    \"price\": 25,\r\n    \"estimatedPrice\": 70,\r\n    \"tags\": \"Tag1, Tag2\",\r\n    \"level\": \"Beginner\",\r\n    \"demoUrl\": \"demo_url_1\",\r\n    \"benefits\": [\r\n        { \"title\": \"Benefit 1\" },\r\n        { \"title\": \"Benefit 2\" }\r\n    ],\r\n    \"prerequisites\": [\r\n        { \"title\": \"Prerequisite 1\" },\r\n        { \"title\": \"Prerequisite 2\" }\r\n    ],\r\n    \"courseData\": [\r\n        {\r\n            \"title\": \"Module 1\",\r\n            \"description\": \"Description for Module 1\",\r\n            \"videoUrl\": \"video_url_1\",\r\n            \"videoLength\": 90,\r\n            \"links\": [\r\n                { \"title\": \"Link 1\", \"url\": \"link_url_1\" }\r\n            ]\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/create-course",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"create-course"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Course",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Course 1 Updated\",\r\n    \"description\": \"Description for Course 1\",\r\n    \"price\": 29,\r\n    \"estimatedPrice\": 80,\r\n    \"tags\": \"Tag1, Tag2\",\r\n    \"level\": \"Beginner\",\r\n    \"demoUrl\": \"demo_url_1\",\r\n    \"benefits\": [\r\n        { \"title\": \"Benefit 1\" },\r\n        { \"title\": \"Benefit 2\" }\r\n    ],\r\n    \"prerequisites\": [\r\n        { \"title\": \"Prerequisite 1\" },\r\n        { \"title\": \"Prerequisite 2\" }\r\n    ],\r\n    \"courseData\": [\r\n        {\r\n            \"title\": \"Module 1\",\r\n            \"description\": \"Description for Module 1\",\r\n            \"videoUrl\": \"video_url_1\",\r\n            \"videoLength\": 60,\r\n            \"links\": [\r\n                { \"title\": \"Link 1\", \"url\": \"link_url_1\" }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/edit-course/6539e646f9988b342156b9ad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"edit-course",
+								"6539e646f9988b342156b9ad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single course --without purchase",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/get-course/6539e646f9988b342156b9ad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"get-course",
+								"6539e646f9988b342156b9ad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Courses -- without purchase",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/get-all-courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"get-all-courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Course Content",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/get-course-content/6539e646f9988b342156b9ad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"get-course-content",
+								"6539e646f9988b342156b9ad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Question",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/add-question",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"add-question"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add answer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"answer\":\"It is a test answer\",\r\n    \"courseId\": \"6539e646f9988b342156b9ad\",\r\n    \"contentId\":\"6539ea8a811a91a138d61807\",\r\n    \"questionId\": \"653a4b9bdc6ffdf0e2765efa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/add-answer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"add-answer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add review",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"review\": \"test review 2\",\r\n    \"rating\" : 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/add-review/6539e646f9988b342156b9ad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"add-review",
+								"6539e646f9988b342156b9ad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add reply to review -- only admin",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\": \"A test reply to review\",\r\n    \"courseId\": \"6539e646f9988b342156b9ad\",\r\n    \"reviewId\": \"653a6b6368133714ac6737f7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/add-reply",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"add-reply"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all courses -- only admin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/get-courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"get-courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Course --only admin",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/delete-course/653bce9f7d94c97e2cb3fa15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"delete-course",
+								"653bce9f7d94c97e2cb3fa15"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create New Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseId\": \"6539e646f9988b342156b9ad\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/create-order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"create-order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all orders -- only admin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/get-orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"get-orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notifications",
+			"item": [
+				{
+					"name": "Get All Notification --only admin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/get-all-notifications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"get-all-notifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Notificaion status --only admin",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/update-notification/653b775f3774e45541134727",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"update-notification",
+								"653b775f3774e45541134727"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Analytics --only admin",
+			"item": [
+				{
+					"name": "Get User Analytics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/get-users-analytics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"get-users-analytics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Orders Analytics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/get-orders-analytics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"get-orders-analytics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Courses Analytics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/get-courses-analytics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"get-courses-analytics"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Layout --only admin",
+			"item": [
+				{
+					"name": "Create Layout --type: faq",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"FAQ\",\r\n    \"faq\": [\r\n        {\r\n            \"question\": \"FAQ Question - 1\",\r\n            \"answer\": \"FAQ Answer - 1\"\r\n        },\r\n        {\r\n            \"question\": \"FAQ Question - 2\",\r\n            \"answer\": \"FAQ Answer - 2\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/create-layout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"create-layout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Layout -- type: categories",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"Categories\",\r\n    \"categories\": [\r\n        {\r\n            \"title\": \"Category - 1\"\r\n        },\r\n        {\r\n            \"title\": \"Category - 2\"\r\n        },\r\n        {\r\n            \"title\": \"Category - 3\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/create-layout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"create-layout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Layout -- faq",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"FAQ\",\r\n    \"faq\": [\r\n        {\r\n            \"question\": \"FAQ Question - 1\",\r\n            \"answer\": \"FAQ Answer - 1\"\r\n        },\r\n        {\r\n            \"question\": \"FAQ Question - 2\",\r\n            \"answer\": \"FAQ Answer - 2\"\r\n        },\r\n        {\r\n            \"question\": \"FAQ Question - 3\",\r\n            \"answer\": \"FAQ Answer - 3\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/update-layout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"update-layout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update layout --categories",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"Categories\",\r\n    \"categories\": [\r\n        {\r\n            \"title\": \"Category - 1\"\r\n        },\r\n        {\r\n            \"title\": \"Category - 2\"\r\n        },\r\n        {\r\n            \"title\": \"Category - 3\"\r\n        },\r\n        {\r\n            \"title\": \"Category - 4\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/update-layout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"update-layout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Layout --for everyone",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"FAQ\"\r\n    // \"type\": \"Categories\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/get-layout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"get-layout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
